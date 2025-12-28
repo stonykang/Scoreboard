@@ -42,10 +42,10 @@ async function fetchAndRender() {
     container.style.height = `${data.length * ROW_HEIGHT}px`;
 
     const currentTeams = new Set();
-    
-    // [동점자 처리 변수] 
+
+    // [동점자 처리 변수]
     // 이전 점수와 순위를 기억해서 비교
-    let lastScore = -1; 
+    let lastScore = -1;
     let rankForStyle = 0; // 색상 결정을 위한 '진짜 순위'
 
     data.forEach((item, index) => {
@@ -61,7 +61,7 @@ async function fetchAndRender() {
       }
 
       const el = teamElements[teamName];
-      
+
       // [핵심 로직: 순위 계산]
       const realRank = index + 1; // 실제 현재 위치 (1, 2, 3, 4...)
       let displayRank = realRank; // 화면에 표시할 글자 ('1', '2', '-')
@@ -84,13 +84,16 @@ async function fetchAndRender() {
       let borderClass = "border-border";
 
       if (rankForStyle === 1) {
-        rankColor = "text-yellow-400 bg-yellow-400/10 ring-1 ring-yellow-400/50";
-        borderClass = "border-yellow-500/50 shadow-[0_0_15px_rgba(234,179,8,0.1)]";
+        rankColor =
+          "text-yellow-400 bg-yellow-400/10 ring-1 ring-yellow-400/50";
+        borderClass =
+          "border-yellow-500/50 shadow-[0_0_15px_rgba(234,179,8,0.1)]";
       } else if (rankForStyle === 2) {
         rankColor = "text-slate-300 bg-slate-400/10 ring-1 ring-slate-400/50";
         borderClass = "border-slate-500/50";
       } else if (rankForStyle === 3) {
-        rankColor = "text-orange-400 bg-orange-400/10 ring-1 ring-orange-400/50";
+        rankColor =
+          "text-orange-400 bg-orange-400/10 ring-1 ring-orange-400/50";
         borderClass = "border-orange-500/50";
       }
 
@@ -113,7 +116,9 @@ async function fetchAndRender() {
                     </div>
                     <div class="col-span-4 text-right">
                         <span class="font-mono font-bold text-emerald-400 text-sm md:text-xl">
-                            ${Number(item.score).toLocaleString()}<span class="text-xs md:text-base text-emerald-600 ml-1">J달러</span>
+                            ${Number(
+                              item.score
+                            ).toLocaleString()}<span class="text-xs md:text-base text-emerald-600 ml-1">J</span>
                         </span>
                     </div>
                 </div>
