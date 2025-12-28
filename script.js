@@ -118,7 +118,7 @@ async function fetchAndRender() {
                         <span class="font-mono font-bold text-emerald-400 text-sm md:text-xl">
                             ${Number(
                               item.score
-                            ).toLocaleString()}<span class="text-xs md:text-base text-emerald-600 ml-1">J</span>
+                            ).toLocaleString()}<span class="text-sm md:text-base text-emerald-600 ml-1">J</span>
                         </span>
                     </div>
                 </div>
