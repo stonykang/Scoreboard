@@ -1,0 +1,49 @@
+/* 1. Pretendard 폰트 import */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, sans-serif;
+}
+
+/* 2. 스크롤바 디자인 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* 3. 팀 카드 애니메이션 (부드럽게 멈춤) */
+.team-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  /* [수정됨] 튕김 없이 부드럽게 감속하여 멈춤 */
+  transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+
+  height: 80px; /* PC 기본 높이 */
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .team-card {
+    height: 64px;
+  }
+}
+
+/* 마우스 올렸을 때 효과 */
+.team-card:hover {
+  transform: scale(1.01);
+  z-index: 50;
+  background-color: #27272a;
+  border-color: #3f3f46;
+}

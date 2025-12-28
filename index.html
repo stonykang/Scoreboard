@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2025 창업경진대회 스코어보드</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#09090b",
+              card: "#18181b",
+              border: "#27272a",
+              primary: "#fafafa",
+              muted: "#a1a1aa",
+            },
+            fontFamily: {
+              sans: ["Pretendard", "Apple SD Gothic Neo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-background text-primary min-h-screen antialiased selection:bg-emerald-500 selection:text-white overflow-y-scroll"
+  >
+    <div class="w-full max-w-5xl mx-auto px-4 py-8 md:py-12">
+      <header class="mb-8 md:mb-12 text-center space-y-2">
+        <p
+          class="text-emerald-400 font-bold tracking-[0.2em] text-xs md:text-sm uppercase animate-pulse"
+        >
+          RISE B.E.Y.O.N.D : 내일을 열다
+        </p>
+        <h2 class="text-lg md:text-2xl font-medium text-zinc-400 pt-0">
+          2025 제주권대학 연합 창업경진대회
+        </h2>
+        <h1
+          class="text-3xl md:text-5xl font-extrabold text-white tracking-tight break-keep pt-3"
+        >
+          실시간 투자 현황표
+        </h1>
+      </header>
+
+      <div
+        class="grid grid-cols-12 gap-2 md:gap-4 px-4 md:px-6 py-3 text-xs md:text-sm font-medium text-muted uppercase tracking-wider border-b border-border mb-2"
+      >
+        <div class="col-span-2 text-center">순위</div>
+        <div class="col-span-6 pl-2">참가팀</div>
+        <div class="col-span-4 text-right">투자유치금</div>
+      </div>
+
+      <div class="relative w-full" id="scoreboard-container">
+        <div
+          id="loading-spinner"
+          class="flex flex-col items-center justify-center py-20 text-muted space-y-4"
+        >
+          <div
+            class="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"
+          ></div>
+          <p class="text-sm">실시간 집계 중...</p>
+          <p id="debug-msg" class="text-xs text-red-500 hidden">
+            데이터 응답이 지연되고 있습니다.<br />잠시만 기다려주세요...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
